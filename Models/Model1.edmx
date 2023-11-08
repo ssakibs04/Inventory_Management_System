@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Inventory_managementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Inventory_managementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="id" />
@@ -21,6 +21,8 @@
           <Property Name="Purchase_product" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Purchase_pnty" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="Purchase_date" Type="date" Nullable="false" />
+          <Property Name="unit_price" Type="int" />
+          <Property Name="total_price" Type="int" />
         </EntityType>
         <EntityType Name="Sale">
           <Key>
@@ -36,8 +38,7 @@
           <EntitySet Name="Purchase" EntityType="Self.Purchase" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Inventory_managementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -57,6 +58,8 @@
           <Property Name="Purchase_product" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Purchase_pnty" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Purchase_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="unit_price" Type="Int32" />
+          <Property Name="total_price" Type="Int32" />
         </EntityType>
         <EntityType Name="Sale">
           <Key>
@@ -90,6 +93,8 @@
           <EntitySetMapping Name="Purchases">
             <EntityTypeMapping TypeName="Inventory_managementModel.Purchase">
               <MappingFragment StoreEntitySet="Purchase">
+                <ScalarProperty Name="total_price" ColumnName="total_price" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Purchase_product" ColumnName="Purchase_product" />
                 <ScalarProperty Name="Purchase_pnty" ColumnName="Purchase_pnty" />

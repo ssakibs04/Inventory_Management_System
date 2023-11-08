@@ -1,0 +1,58 @@
+﻿@model inventory_ManagementSystem.Models.Purchase
+
+@{
+    ViewBag.Title = "DetailsPurchase";
+}
+
+<h2 class="text-info">Purchase Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Purchased Product Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purchase_product)
+        </dd>
+
+        <dt>
+            @Html.Label("Product Quantity")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purchase_pnty)
+        </dd>
+
+        <dt>
+            @Html.Label("Purchased Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purchase_date)
+        </dd>
+
+        <dt>
+            @Html.Label("Unit Price")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_price)
+        </dd>
+
+        <dt>
+            @Html.Label("Total Price")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Update", "UpdatePurchaseProduct","Purchase", new { id = Model.id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Cancel", "DisplayPurchase",new { }, new {@class="btn btn-danger"})
+</p>

@@ -18,5 +18,7 @@ namespace inventory_ManagementSystem.Models
         public string Purchase_product { get; set; }
         public string Purchase_pnty { get; set; }
         public System.DateTime Purchase_date { get; set; }
+        public Nullable<int> unit_price { get; set; }
+        public Nullable<int> total_price { get; set; }
     }
 }

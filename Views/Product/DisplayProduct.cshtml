@@ -18,6 +18,7 @@
         <th>
             @Html.DisplayName("Product Quantity")
         </th>
+     
         <th>
             @Html.DisplayName("Actions")
         </th>
@@ -35,10 +36,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.product_qnty)
         </td>
+      
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }, new {@class="btn btn-primary"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Edit", "UpdateProduct","Product" ,new { id=item.id }, new {@class="btn btn-primary"}) |
+            @Html.ActionLink("Details", "ProductDetails","Product", new { id=item.id }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "DeleteProduct","Product", new { id=item.id }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

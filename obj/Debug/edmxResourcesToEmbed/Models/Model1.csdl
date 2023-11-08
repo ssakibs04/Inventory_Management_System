@@ -16,6 +16,8 @@
     <Property Name="Purchase_product" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Purchase_pnty" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Purchase_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="unit_price" Type="Int32" />
+    <Property Name="total_price" Type="Int32" />
   </EntityType>
   <EntityType Name="Sale">
     <Key>

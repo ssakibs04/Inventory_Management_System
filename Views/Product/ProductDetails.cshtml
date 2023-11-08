@@ -1,0 +1,47 @@
+﻿@model inventory_ManagementSystem.Models.Product
+
+@{
+    ViewBag.Title = "ProductDetails";
+}
+
+<h2>Product Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Product ID")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.Label("Product Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_name)
+        </dd>
+
+        <dt>
+            @Html.Label("Product Quantity")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_qnty)
+        </dd>
+
+
+        <dt>
+            @Html.Label("Total Price")
+        </dt>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdateProduct", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "DisplayProduct","Product")
+</p>

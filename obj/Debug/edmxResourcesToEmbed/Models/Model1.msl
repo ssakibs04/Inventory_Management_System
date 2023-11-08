@@ -13,6 +13,8 @@
     <EntitySetMapping Name="Purchases">
       <EntityTypeMapping TypeName="Inventory_managementModel.Purchase">
         <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Purchase_product" ColumnName="Purchase_product" />
           <ScalarProperty Name="Purchase_pnty" ColumnName="Purchase_pnty" />
