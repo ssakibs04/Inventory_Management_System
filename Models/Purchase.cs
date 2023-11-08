@@ -20,5 +20,7 @@ namespace inventory_ManagementSystem.Models
         public System.DateTime Purchase_date { get; set; }
         public Nullable<int> unit_price { get; set; }
         public Nullable<int> total_price { get; set; }
-    }
+		public string Sale_pnty { get; internal set; }
+		public string Sale_product { get; internal set; }
+	}
 }

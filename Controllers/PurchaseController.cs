@@ -73,5 +73,21 @@ namespace inventory_ManagementSystem.Controllers
 			Purchase pr= db.Purchases.Where(model=>model.id == id).SingleOrDefault();
 			return View(pr);
 		}
+
+		[HttpGet]
+		public ActionResult DeletePurchase(int id)
+		{
+
+			Purchase purr = db.Purchases.Where(model => model.id == id).SingleOrDefault();
+			return View(purr);
+		}
+		[HttpPost]
+		public ActionResult DeletePurchase(int id, Purchase pro)
+		{
+			Purchase pr = db.Purchases.Where(model => model.id == id).FirstOrDefault();
+			db.Purchases.Remove(pr);
+			db.SaveChanges();
+			return RedirectToAction("DisplayPurchase");
+		}
 	}
 }

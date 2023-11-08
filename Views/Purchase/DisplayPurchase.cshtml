@@ -7,10 +7,10 @@
 <h2 style="color:forestgreen">My Purchase List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "PurchaseProduct", new { }, new {@class="btn btn-primary"})
+    @Html.ActionLink("Create New", "PurchaseProduct", new { }, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
-    <tr class="text-bg-info"> 
+    <tr class="text-bg-info">
         <th>
             @Html.DisplayName("Purchase Product")
         </th>
@@ -25,7 +25,8 @@
         </th>
         <th>
             @Html.DisplayName("Total Price")
-        </th><th>
+        </th>
+        <th>
             @Html.DisplayName("Actions")
         </th>
         <th></th>
@@ -44,15 +45,15 @@
                 @Html.DisplayFor(modelItem => item.Purchase_date)
             </td>
             <td>
-                @Html.DisplayFor(modelitem=> item.unit_price)
+                @Html.DisplayFor(modelitem => item.unit_price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem=> item.total_price)
+                @Html.DisplayFor(modelItem => item.total_price)
             </td>
             <td>
-                @Html.ActionLink("Update", "UpdatePurchaseProduct", "Purchase", new { id = item.id }, new {@class = "btn btn-primary" } ) |
-                @Html.ActionLink("Details", "DetailsPurchase", new { id = item.id },new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Delete", "DeletePurchase", new { id = item.id } ,new { @class = "btn btn-danger" } )
+                @Html.ActionLink("Update", "UpdatePurchaseProduct", "Purchase", new { id = item.id }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "DetailsPurchase", new { id = item.id }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Delete", "DeletePurchase", new { id = item.id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

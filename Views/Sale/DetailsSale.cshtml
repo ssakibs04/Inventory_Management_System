@@ -1,0 +1,42 @@
+﻿@model inventory_ManagementSystem.Models.Sale
+
+@{
+    ViewBag.Title = "DetailsSale";
+}
+
+<h2>Sale Details</h2>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Sale Product")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale_product)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sale Quantity")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale_pnty)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sale Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Update", "UpdateSaleProduct", new { id = Model.id }, new {@class="btn btn-primary"}) |
+    @Html.ActionLink("Back to List", "DisplaySale")
+</p>
